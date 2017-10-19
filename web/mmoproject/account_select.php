@@ -46,7 +46,7 @@ $db = get_db();
 			{
 				echo '<tr>';
 				echo '<td>' . $row['id'] . '</td>';
-				echo '<td onClick=\"setSession(\"account\", ' . $row['id'] . ')\">' . $row['username'] . '</td>';
+				echo '<td><button onClick=\"setSession(\"account\", ' . $row['id'] . ')\">' . $row['username'] . '</button></td>';
 				echo '<td>' . $row['user_email'] . '</td>';
 				echo '</tr>';
 			}
