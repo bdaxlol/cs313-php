@@ -46,3 +46,8 @@ function get_db() {
 	}
 	return $db;
 }
+
+function set_session_var($var, $val) {
+	$_SESSION[$var] = $val;
+	echo "Session variable $var set to $val .";
+}

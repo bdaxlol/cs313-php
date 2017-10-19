@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "dbConnect.php";
 $db = get_db();
 ?>
@@ -26,7 +27,7 @@ $db = get_db();
 
 		<article>
 			<h1>User Accounts</h1>
-			<p>Select an account to access.</p>
+			<p>Select a username to access the account.</p>
 
 			<!-- This table layout is temporary for debugging -->
 			<table>
@@ -45,12 +46,14 @@ $db = get_db();
 			{
 				echo '<tr>';
 				echo '<td>' . $row['id'] . '</td>';
-				echo '<td>' . $row['username'] . '</td>';
+				echo '<td onClick=\"setSession(\"account\", ' . $row['id'] . ')\">' . $row['username'] . '</td>';
 				echo '<td>' . $row['user_email'] . '</td>';
 				echo '</tr>';
 			}
 			?>
 			</table>
+
+			<div id="sessionStatus"></div>
 
 		</article>
 	</body>
