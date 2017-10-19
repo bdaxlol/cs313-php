@@ -10,7 +10,7 @@
 $dbUser = 'postgres';
 $dbPassword = 'mniDnb16';
 $dbName = 'scripture_ta';
-$dbHost = 'localhost';
+$dbHost = '127.0.0.1';
 $dbPort = '5432';
 try
 {
