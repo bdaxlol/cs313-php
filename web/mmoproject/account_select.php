@@ -32,7 +32,7 @@ $db = get_db();
 
 			<?php
 			
-			$statement = $db->prepare("SELECT id, username, user_email FROM user");
+			$statement = $db->prepare("SELECT id, username, user_email FROM user_account");
 			$statement->execute();
 			// Go through each result
 
