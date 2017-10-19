@@ -29,7 +29,12 @@ $db = get_db();
 			<p>Select an account to access.</p>
 
 			<!-- This table layout is temporary for debugging -->
-
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Username</th>
+					<th>E-mail Address</th>
+				</tr>
 			<?php
 			
 			$statement = $db->prepare("SELECT id, username, user_email FROM user_account");
@@ -38,12 +43,14 @@ $db = get_db();
 
 			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 			{
-				echo '<p>';
-				echo '<strong>' . $row['id'] . ' ' . $row['username'] . ':';
-				echo $row['user_email'];
-				echo '</p>';
+				echo '<tr>';
+				echo '<td>' . $row['id'] . '</td>';
+				echo '<td>' . $row['username'] . '</td>';
+				echo '<td>' . $row['user_email'] . '</td>';
+				echo '</tr>';
 			}
 			?>
+			</table>
 
 		</article>
 	</body>
