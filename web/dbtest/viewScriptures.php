@@ -7,8 +7,8 @@
 *   PostgreSQL database from PHP.
 ***********************************************************/
 // It would be better to store these in a different file
-$dbUser = 'ta_user';
-$dbPassword = 'ta_pass';
+$dbUser = 'postgres';
+$dbPassword = 'mniDnb16';
 $dbName = 'scripture_ta';
 $dbHost = 'localhost';
 $dbPort = '5432';
