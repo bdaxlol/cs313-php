@@ -32,10 +32,41 @@ $db = get_db();
 			<p>Select a Character to Play</p>
 
 			<?php
-			echo session_id();
-			echo ini_get('session.cookie_domain');
-			print_r($_SESSION);
-			echo "You previously selected " . $_SESSION["account"] . " as the account.";
+			
+			echo 'You previously selected ' . $_SESSION["account"] . ' as the account.';
+			echo '<br>Due to current issues with sessions, I will proceed as if account ID 1 was selected.<br>';
+
+			echo '<table><tr>';
+			echo '<th>Account</th>';
+			echo '<th>Player ID</th>';
+			echo '<th>Character Name</th>';
+			echo '<th>Exp</th>';
+			echo '<th>HP</th>';
+			echo '<th>STR</th>';
+			echo '<th>INT</th>';
+			echo '<th>AGI</th></tr>';
+
+			$_SESSION["account"] = 1;
+
+			$statement = $db->prepare("SELECT ua.username, p.id, p.name, p.exp_points, p.health_points, p.strength, p.intellect, p.agility FROM player p INNER JOIN user_account ua ON ua.id=p.user_id WHERE ua.id=$_SESSION["account"]");
+			$statement->execute();
+			// Go through each result
+
+			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+			{
+				echo '<tr>';
+				echo '<td>' . $row['ua.username'] . '</td>';
+				echo '<td>' . $row['p.id'] . '</td>';
+				echo '<td>' . $row['p.name'] . '</td>';
+				echo '<td>' . $row['p.exp_points'] . '</td>';
+				echo '<td>' . $row['p.health_points'] . '</td>';
+				echo '<td>' . $row['p.strength'] . '</td>';
+				echo '<td>' . $row['p.intellect'] . '</td>';
+				echo '<td>' . $row['p.agility'] . '</td>';
+				echo '</tr>';
+			}
+
+			echo '</table>';
 
 			?>
 			

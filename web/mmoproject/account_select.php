@@ -52,11 +52,7 @@ $db = get_db();
 			}
 			?>
 			</table>
-
-			<?php
-			echo session_id();
-			echo ini_get('session.cookie_domain');
-			?>
+			
 			<div id="sessionResult">Waiting for session to update...</div>
 
 			<div id="charSelBtn" style="visibility:hidden"><a href="char_select.php">Continue to Character Select</a></div>
