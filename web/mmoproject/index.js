@@ -10,3 +10,16 @@ function setSession(q, r) {
 	xmlhttp.open("GET", "setSession.php?q=" + q + "&r=" + r, true);
 	xmlhttp.send();
 }
+
+function addLine(str) {
+    var table = document.getElementById("scrollTable");
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = str;
+    updateScroll();
+}
+
+function updateScroll(){
+    var element = document.getElementById("scrollDiv");
+    element.scrollTop = element.scrollHeight;
+}

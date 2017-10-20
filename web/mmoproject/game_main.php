@@ -28,14 +28,7 @@ $db = get_db();
 		</nav>
 
 		<article>
-			<h1>MMORPG Mockup</h1>
-
 			<?php
-			
-			echo 'You previously selected ' . $_SESSION["account"] . ' as the account.';
-			echo 'You previously selected ' . $_SESSION["character"] . ' as the character.';
-
-			echo '<p>Player Status</p>';
 
 			echo '<table><tr>';
 			echo '<th>Name</th>';
@@ -45,7 +38,7 @@ $db = get_db();
 			echo '<th>AGI</th>';
 			echo '<th>EXP</th>';
 			echo '<th>GOLD</th>';
-			echo '<th>MAP</th></tr>';
+			echo '<th>Map</th></tr>';
 
 			$statement = $db->prepare('SELECT name, health_points, strength, intellect, agility, exp_points, gold, map_id, map_x, map_y FROM player WHERE id=' . $_SESSION["character"]);
 			$statement->execute();
@@ -86,6 +79,20 @@ $db = get_db();
 			echo '</tr>';
 			echo '</table>';
 
+			?>
+
+			<br>
+			<div id="scrollDiv">
+			<table id="scrollTable">
+  				<tr>
+    				<td>Welcome!</td>
+  				</tr>
+			</table>
+			</div>
+			<br>
+
+			<?php
+			echo "<script> addLine('You are standing in " . $mapName . "'); </script>";
 			?>
 			
 		</article>
