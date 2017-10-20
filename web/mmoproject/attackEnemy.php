@@ -2,8 +2,10 @@
 <?php
 require "dbConnect.php";
 $db = get_db();
-$str = $_REQUEST["str"];
-$enemyId = $_REQUEST["enemyId"];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$str = $_POST["str"];
+$enemyId = $_POST["enemyId"];
 
 //got parameters for str of attacking player and id of target enemy
 
@@ -36,6 +38,7 @@ if ($enemyHP <= 0) {
 	// Now update DB to keep this new HP value for enemy
 	$statement = $db->prepare('UPDATE enemy SET health_points = ' . $enemyHP . ' WHERE id=' . $enemyId);
 	$statement->execute();
+}
 }
 
 ?>
