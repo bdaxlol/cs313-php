@@ -57,7 +57,7 @@ $db = get_db();
 				echo '<tr>';
 				echo '<td>' . $row['username'] . '</td>';
 				echo '<td>' . $row['id'] . '</td>';
-				echo '<td>' . $row['name'] . '</td>';
+				echo '<td><button onClick="setSession(\'character\', ' . $row['id'] . ')">' . $row['name'] . '</button></td>';
 				echo '<td>' . $row['exp_points'] . '</td>';
 				echo '<td>' . $row['health_points'] . '</td>';
 				echo '<td>' . $row['strength'] . '</td>';
@@ -69,6 +69,9 @@ $db = get_db();
 			echo '</table>';
 
 			?>
+
+			<div id="sessionResult">Waiting for session to update...</div>
+			<div id="continueBtn" style="visibility:hidden"><a href="game_main.php">Continue to Game</a></div>
 			
 		</article>
 	</body>
