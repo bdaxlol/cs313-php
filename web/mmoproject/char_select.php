@@ -55,14 +55,14 @@ $db = get_db();
 			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 			{
 				echo '<tr>';
-				echo '<td>' . $row['ua.username'] . '</td>';
-				echo '<td>' . $row['p.id'] . '</td>';
-				echo '<td>' . $row['p.name'] . '</td>';
-				echo '<td>' . $row['p.exp_points'] . '</td>';
-				echo '<td>' . $row['p.health_points'] . '</td>';
-				echo '<td>' . $row['p.strength'] . '</td>';
-				echo '<td>' . $row['p.intellect'] . '</td>';
-				echo '<td>' . $row['p.agility'] . '</td>';
+				echo '<td>' . $row['username'] . '</td>';
+				echo '<td>' . $row['id'] . '</td>';
+				echo '<td>' . $row['name'] . '</td>';
+				echo '<td>' . $row['exp_points'] . '</td>';
+				echo '<td>' . $row['health_points'] . '</td>';
+				echo '<td>' . $row['strength'] . '</td>';
+				echo '<td>' . $row['intellect'] . '</td>';
+				echo '<td>' . $row['agility'] . '</td>';
 				echo '</tr>';
 			}
 
