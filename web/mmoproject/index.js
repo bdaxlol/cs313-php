@@ -16,7 +16,7 @@ function attackEnemy(str, enemyId) {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("sessionResult").innerHTML = this.responseText;
+			//document.getElementById("sessionResult").innerHTML = this.responseText;
 		}
 	};
 	xmlhttp.open("GET", "attackEnemy.php?str=" + str + "&enemyId=" + enemyId, true);
