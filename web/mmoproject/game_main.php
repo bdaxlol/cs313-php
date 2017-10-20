@@ -80,7 +80,7 @@ $db = get_db();
 			echo '</table>';
 
 			echo '<br><div id="scrollDiv">';
-			echo '<table id="scrollTable"><tr><td>Welcome!</td></tr></table></div><br>'
+			echo '<table id="scrollTable"><tr><td>Welcome!</td></tr></table></div><br>';
 			
 			echo "<script> addLine('You are standing in " . $mapName . "'); </script>";
 
@@ -90,7 +90,7 @@ $db = get_db();
 			echo '<th>Max HP</th>';
 			echo '<th>X</th>';
 			echo '<th>Y</th>';
-			echo '<th>Action</th></tr>'
+			echo '<th>Action</th></tr>';
 
 			$statement = $db->prepare('SELECT e.id, el.name, el.base_health_points, e.map_x, e.map_y FROM enemy as e, enemy_lookup as el WHERE e.map_id=' . $mapid . ' AND el.id=e.type');
 			$statement->execute();
