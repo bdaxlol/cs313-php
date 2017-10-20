@@ -65,14 +65,14 @@ $db = get_db();
 			$mapy = $row['map_y'];
 			}
 			
-			//$statement = $db->prepare('SELECT name FROM map WHERE id=' . $mapid);
-			//$statement->execute();
+			$statement = $db->prepare('SELECT name FROM map WHERE id=' . $mapid);
+			$statement->execute();
 			// Go through each result
 
-			//while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-			//{
-			//$mapName = $row['name'];
-			//}
+			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+			{
+			$mapName = $row['name'];
+			}
 
 			echo '<tr>';
 			echo '<td>' . $name . '</td>';
