@@ -1,7 +1,7 @@
 <?php
-$var = $_REQUEST["q"];
-$val = $_REQUEST["r"];
+$q = $_REQUEST["q"];
+$r = $_REQUEST["r"];
 
-$_SESSION[$var] = $val;
-echo "Session variable $var set to $val .";
+$_SESSION[$q] = $r;
+echo "Session variable $q set to $r .";
 ?>
