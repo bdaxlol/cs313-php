@@ -1,3 +1,9 @@
+<?php
+session_start();
+require "dbConnect.php";
+$db = get_db();
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -24,6 +30,11 @@
 		<article>
 			<h1>Player Characters</h1>
 			<p>Select a Character to Play</p>
+
+			<?php
+			echo "You previously selected " . $_SESSION["account"] . " as the account.";
+
+			?>
 			
 		</article>
 	</body>
