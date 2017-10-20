@@ -36,21 +36,12 @@ article {
     overflow: hidden;
 }
 
-#div1 {
-	background-color: #ff0000;
-	font-size: 100%;
+#scrollTable {
+	background-color:black;
+    color:white;
+    width:100%;
 }
-
-#div2 {
-	background-color: #0066cc;
-	font-size: 150%;
-}
-
-#div3 {
-	background-color: #00cc00;
-	font-size: 200%;
-}
-
-.hoverClass:hover {
-	font-weight: bold;
+#scrollDiv {
+	height:300px;
+    overflow:scroll;
 }
