@@ -17,16 +17,16 @@ $db = get_db();
 			function attackEnemy(str, enemyId) {
 				$.ajax( {
 					type: 'POST',
-					url: attackEnemy.php,
+					url: "attackEnemy.php",
 					data:{str:str, enemyId:enemyId},
 					dataType: 'text',
 					success: function(data) {
 						document.getElementById("attackResult").innerHTML = "Attack successful";
-						    var table = document.getElementById("scrollTable");
-    						var row = table.insertRow(-1);
-    						var cell1 = row.insertCell(0);
-    						cell1.innerHTML = 'You attack the enemy for ' + str + ' damage. It has ' + data + 'HP remaining.';
-    						updateScroll();
+						var table = document.getElementById("scrollTable");
+    					var row = table.insertRow(-1);
+    					var cell1 = row.insertCell(0);
+    					cell1.innerHTML = 'You attack the enemy for ' + str + ' damage. It has ' + data + 'HP remaining.';
+    					updateScroll();
 					}
 				})
 			}
