@@ -2,9 +2,6 @@
 session_start();
 require "dbConnect.php";
 $db = get_db();
-
-echo session_id();
-echo ini_get('session.cookie_domain');
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +32,8 @@ echo ini_get('session.cookie_domain');
 			<p>Select a Character to Play</p>
 
 			<?php
+			echo session_id();
+			echo ini_get('session.cookie_domain');
 			print_r($_SESSION);
 			echo "You previously selected " . $_SESSION["account"] . " as the account.";
 

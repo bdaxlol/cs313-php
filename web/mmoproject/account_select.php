@@ -2,9 +2,6 @@
 session_start();
 require "dbConnect.php";
 $db = get_db();
-
-echo session_id();
-echo ini_get('session.cookie_domain');
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +53,10 @@ echo ini_get('session.cookie_domain');
 			?>
 			</table>
 
+			<?php
+			echo session_id();
+			echo ini_get('session.cookie_domain');
+			?>
 			<div id="sessionResult">Waiting for session to update...</div>
 
 			<div id="charSelBtn" style="visibility:hidden"><a href="char_select.php">Continue to Character Select</a></div>
