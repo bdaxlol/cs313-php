@@ -51,7 +51,7 @@ $db = get_db();
 
 			$_SESSION["character"] = 2;
 
-			$statement = $db->prepare('SELECT name, health_points, strength, intellect, agility, exp_points, gold, map_id, map_x, map_y FROM player WHERE p.id=' . $_SESSION["character"]);
+			$statement = $db->prepare('SELECT name, health_points, strength, intellect, agility, exp_points, gold, map_id, map_x, map_y FROM player WHERE id=' . $_SESSION["character"]);
 			$statement->execute();
 			// Go through each result
 
