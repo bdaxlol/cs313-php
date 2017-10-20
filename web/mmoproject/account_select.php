@@ -2,6 +2,9 @@
 session_start();
 require "dbConnect.php";
 $db = get_db();
+
+echo session_id();
+echo ini_get('session.cookie_domain');
 ?>
 
 <!DOCTYPE html>
