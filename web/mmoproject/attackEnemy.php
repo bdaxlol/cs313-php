@@ -1,5 +1,7 @@
 <?php
 session_start();
+require "dbConnect.php";
+$db = get_db();
 $str = $_REQUEST["str"];
 $enemyId = $_REQUEST["enemyId"];
 
