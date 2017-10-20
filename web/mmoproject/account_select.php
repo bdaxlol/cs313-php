@@ -53,7 +53,7 @@ $db = get_db();
 			?>
 			</table>
 
-			<div id="sessionStatus">Waiting for session to update...</div>
+			<div id="sessionResult">Waiting for session to update...</div>
 
 		</article>
 	</body>
