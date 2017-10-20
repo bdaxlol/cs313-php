@@ -79,19 +79,9 @@ $db = get_db();
 			echo '</tr>';
 			echo '</table>';
 
-			?>
-
-			<br>
-			<div id="scrollDiv">
-			<table id="scrollTable">
-  				<tr>
-    				<td>Welcome!</td>
-  				</tr>
-			</table>
-			</div>
-			<br>
-
-			<?php
+			echo '<br><div id="scrollDiv">';
+			echo '<table id="scrollTable"><tr><td>Welcome!</td></tr></table></div><br>'
+			
 			echo "<script> addLine('You are standing in " . $mapName . "'); </script>";
 
 			// add a table to display nearby monsters
