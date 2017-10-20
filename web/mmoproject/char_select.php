@@ -48,7 +48,7 @@ $db = get_db();
 
 			$_SESSION["account"] = 1;
 
-			$statement = $db->prepare("SELECT ua.username, p.id, p.name, p.exp_points, p.health_points, p.strength, p.intellect, p.agility FROM player p INNER JOIN user_account ua ON ua.id=p.user_id WHERE ua.id=1");
+			$statement = $db->prepare("SELECT ua.username, p.id, p.name, p.exp_points, p.health_points, p.strength, p.intellect, p.agility FROM player as p, user_account as ua WHERE ua.id=1 AND ua.id=p.user_id");
 			$statement->execute();
 			// Go through each result
 
