@@ -32,6 +32,7 @@ $db = get_db();
 			<p>Select a Character to Play</p>
 
 			<?php
+			print_r($_SESSION);
 			echo "You previously selected " . $_SESSION["account"] . " as the account.";
 
 			?>
