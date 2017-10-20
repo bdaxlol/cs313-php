@@ -34,7 +34,6 @@ $db = get_db();
 			<?php
 			
 			echo 'You previously selected ' . $_SESSION["account"] . ' as the account.';
-			echo '<br>Due to current issues with sessions, I will proceed as if account ID 1 was selected.<br>';
 
 			echo '<table><tr>';
 			echo '<th>Account</th>';
@@ -45,8 +44,6 @@ $db = get_db();
 			echo '<th>STR</th>';
 			echo '<th>INT</th>';
 			echo '<th>AGI</th></tr>';
-
-			$_SESSION["account"] = 1;
 
 			$statement = $db->prepare('SELECT ua.username, p.id, p.name, p.exp_points, p.health_points, p.strength, p.intellect, p.agility FROM player as p, user_account as ua WHERE ua.id=' . $_SESSION["account"] . ' AND ua.id=p.user_id');
 			$statement->execute();

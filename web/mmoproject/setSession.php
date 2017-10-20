@@ -1,4 +1,5 @@
 <?php
+session_start();
 $q = $_REQUEST["q"];
 $r = $_REQUEST["r"];
 

@@ -35,8 +35,6 @@ $db = get_db();
 			echo 'You previously selected ' . $_SESSION["account"] . ' as the account.';
 			echo 'You previously selected ' . $_SESSION["character"] . ' as the character.';
 
-			echo '<br>Due to current issues with sessions, I will proceed as if player ID 2 was selected.<br>';
-
 			echo '<p>Player Status</p>';
 
 			echo '<table><tr>';
@@ -48,8 +46,6 @@ $db = get_db();
 			echo '<th>EXP</th>';
 			echo '<th>GOLD</th>';
 			echo '<th>MAP</th></tr>';
-
-			$_SESSION["character"] = 2;
 
 			$statement = $db->prepare('SELECT name, health_points, strength, intellect, agility, exp_points, gold, map_id, map_x, map_y FROM player WHERE id=' . $_SESSION["character"]);
 			$statement->execute();
