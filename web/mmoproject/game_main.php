@@ -35,7 +35,7 @@ $db = get_db();
 			echo 'You previously selected ' . $_SESSION["account"] . ' as the account.';
 			echo 'You previously selected ' . $_SESSION["character"] . ' as the character.';
 
-			echo '<br>Due to current issues with sessions, I will proceed as if account ID 1 and player ID 2 were selected.<br>';
+			echo '<br>Due to current issues with sessions, I will proceed as if player ID 2 was selected.<br>';
 
 			echo '<p>Player Status</p>';
 
@@ -70,13 +70,13 @@ $db = get_db();
 
 
 
-			$statement = $db->prepare('SELECT name FROM map WHERE id=' . $mapid);
-			$statement->execute();
+			$statement2 = $db->prepare('SELECT name FROM map WHERE id=' . $mapid);
+			$statement2->execute();
 			// Go through each result
 
-			$row = $statement->fetch(PDO::FETCH_ASSOC);
+			$row2 = $statement2->fetch(PDO::FETCH_ASSOC);
 			
-			$mapName = $row['name'];
+			$mapName = $row2['name'];
 
 			echo '<tr>';
 			echo '<td>' . $name . '</td>';
