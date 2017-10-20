@@ -82,7 +82,7 @@ $db = get_db();
 			echo '<td>' . $agi . '</td>';
 			echo '<td>' . $exp . '</td>';
 			echo '<td>' . $gold . '</td>';
-			echo '<td>' . $mapid . ': ' . $mapx . ', ' . $mapy . '</td>';
+			echo '<td>' . $mapName . ': ' . $mapx . ', ' . $mapy . '</td>';
 			echo '</tr>';
 			echo '</table>';
 
