@@ -109,7 +109,7 @@ $db = get_db();
 
 			echo '</table>';
 			?>
-			
+			<div id="attackResult"></div>
 		</article>
 	</body>
 </html>
