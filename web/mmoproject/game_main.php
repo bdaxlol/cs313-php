@@ -55,8 +55,8 @@ $db = get_db();
 			$statement->execute();
 			// Go through each result
 
-			$row = $statement->fetch(PDO::FETCH_ASSOC);
-
+			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+			{
 			$name = $row['name'];
 			$hp = $row['health_points'];
 			$str = $row['strength'];
@@ -67,16 +67,16 @@ $db = get_db();
 			$mapid = $row['map_id'];
 			$mapx = $row['map_x'];
 			$mapy = $row['map_y'];
-
-
-
-			$statement2 = $db->prepare('SELECT name FROM map WHERE id=' . $mapid);
-			$statement2->execute();
+			}
+			
+			$statement = $db->prepare('SELECT name FROM map WHERE id=' . $mapid);
+			$statement->execute();
 			// Go through each result
 
-			$row2 = $statement2->fetch(PDO::FETCH_ASSOC);
-			
-			$mapName = $row2['name'];
+			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+			{
+			$mapName = $row['name'];
+			}
 
 			echo '<tr>';
 			echo '<td>' . $name . '</td>';
