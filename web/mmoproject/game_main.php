@@ -12,6 +12,19 @@ $db = get_db();
 		<title>CS313 Project 1 - MMORPG Mockup</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="index.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			function attackEnemy(str, enemyId) {
+				$.ajax( {
+					type: 'POST',
+					url: attackEnemy.php,
+					data:{str:str, enemyId:enemyId},
+					success: function() {
+						document.getElementById("attackResult").innerHTML = "Attack successful";
+					}
+				})
+			}
+		</script>
 	</head>
 
 	<body>

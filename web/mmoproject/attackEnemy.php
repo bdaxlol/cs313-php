@@ -1,5 +1,5 @@
+<script src="index.js"></script>
 <?php
-session_start();
 require "dbConnect.php";
 $db = get_db();
 $str = $_REQUEST["str"];
