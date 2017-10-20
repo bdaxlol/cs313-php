@@ -19,6 +19,7 @@ $db = get_db();
 					type: 'POST',
 					url: attackEnemy.php,
 					data:{str:str, enemyId:enemyId},
+					dataType: 'text',
 					success: function(data) {
 						document.getElementById("attackResult").innerHTML = "Attack successful";
 						    var table = document.getElementById("scrollTable");
