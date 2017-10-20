@@ -93,6 +93,31 @@ $db = get_db();
 
 			<?php
 			echo "<script> addLine('You are standing in " . $mapName . "'); </script>";
+
+			// add a table to display nearby monsters
+			echo '<table><tr>';
+			echo '<th>Name</th>';
+			echo '<th>Max HP</th>';
+			echo '<th>X</th>';
+			echo '<th>Y</th>';
+			echo '<th>Action</th></tr>'
+
+			$statement = $db->prepare('SELECT e.id, el.name, el.base_health_points, e.map_x, e.map_y FROM enemy as e, enemy_lookup as el WHERE e.map_id=' . $mapid . ' AND el.id=e.type');
+			$statement->execute();
+			// Go through each result
+
+			while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+			{
+				echo '<tr>';
+				echo '<td>' . $row['name'] . '</td>';
+				echo '<td>' . $row['base_health_points'] . '</td>';
+				echo '<td>' . $row['map_x'] . '</td>';
+				echo '<td>' . $row['map_y'] . '</td>';
+				echo '<td><button onClick="attackEnemy(' . $str . ', ' . $row['id'] . ')">Attack</button></td>';
+				echo '</tr>';
+			}
+
+			echo '</table>';
 			?>
 			
 		</article>
