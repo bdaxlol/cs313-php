@@ -4,6 +4,7 @@ function setSession(q, r) {
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("sessionResult").innerHTML = this.responseText;
+			document.getElementById("charSelBtn").style.visibility = "visible";
 		}
 	};
 	xmlhttp.open("GET", "setSession.php?q=" + q + "&r=" + r, true);
