@@ -21,20 +21,17 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 // We have enemy's current HP, check if enemy is still alive
 if ($enemyHP <= 0) {
-	echo "<script> addLine('This enemy appears already dead. Try attacking a different one.'); </script>";
+	echo "0";
 } else {
-	echo "<script> addLine('You attack " . $enemyName . " for " . $str . " damage.'); </script>";
 	$enemyHP -= $str;
 }
 
 // Check if this attack kills it
 if ($enemyHP <= 0) {
-	echo "<script> addLine('You have successfully murdered this creature.'); </script>";
+	echo "0";
 	//Should we change something since this creature is dead? Do I have time to implement this?
-	echo "<script> addLine('If I was feeling diligent, you would get some EXP right now.'); </script>";
-	echo "<script> addLine('Sorry breh.'); </script>";
 } else {
-	echo "<script> addLine('" . $enemyName . " has " . $enemyHP . " HP remaining.'); </script>";
+	echo $enemyHP;
 	// Now update DB to keep this new HP value for enemy
 	$statement = $db->prepare('UPDATE enemy SET health_points = ' . $enemyHP . ' WHERE id=' . $enemyId);
 	$statement->execute();

@@ -19,8 +19,13 @@ $db = get_db();
 					type: 'POST',
 					url: attackEnemy.php,
 					data:{str:str, enemyId:enemyId},
-					success: function() {
+					success: function(data) {
 						document.getElementById("attackResult").innerHTML = "Attack successful";
+						    var table = document.getElementById("scrollTable");
+    						var row = table.insertRow(-1);
+    						var cell1 = row.insertCell(0);
+    						cell1.innerHTML = 'You attack the enemy for ' + str + ' damage. It has ' + data + 'HP remaining.';
+    						updateScroll();
 					}
 				})
 			}
